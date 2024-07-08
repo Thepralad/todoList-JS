@@ -8,5 +8,6 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin()
-    ]
+    ],
+    mode: "development",
 }
