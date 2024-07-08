@@ -7,7 +7,9 @@ module.exports = {
         filename: 'bundle.js',
     },
     plugins: [
-        new htmlWebpackPlugin()
+        new htmlWebpackPlugin({
+            template: 'src/index.html'
+        })
     ],
     mode: "development",
 }
