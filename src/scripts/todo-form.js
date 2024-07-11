@@ -1,5 +1,7 @@
 import { pushItem } from "./todo-list";
 import { Items } from "./todo-items";
+import { displayProject } from "./todo-dom";
+
 let CURRENT_PROJ_STATE = 'today';
 
 function projectBtnSelection(){
@@ -7,6 +9,7 @@ function projectBtnSelection(){
     for (const btn of projectBtns) {
         btn.addEventListener('click', e => {
             CURRENT_PROJ_STATE = e.target.textContent;
+            displayProject()
         })
     }
 }
@@ -26,5 +29,5 @@ function inputForm(){
 
 }
 export{
-    inputForm, projectBtnSelection
+    inputForm, projectBtnSelection, CURRENT_PROJ_STATE
 }
