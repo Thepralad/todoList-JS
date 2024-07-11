@@ -3,7 +3,14 @@ function pushToLocalStorage(project){
 }
 function retrieveFromLocalStorage(){
     const data = JSON.parse(localStorage.getItem('Projects'));
-    return data;
+    if(data === null){
+        return {
+            today: []
+        };
+    }
+    else{
+        return data
+    }
 }
 
 export {
