@@ -1,5 +1,6 @@
 import { retrieveFromLocalStorage } from "./todo-storage";
 import { CURRENT_PROJ_STATE } from "./todo-form.js";
+import { popItem } from "./todo-list.js";
 
 function Data(){
     const data = retrieveFromLocalStorage();
@@ -41,6 +42,16 @@ function displayProject(){
             itemDiv.appendChild(horizontalLine);
 
             _itemsDiv.appendChild(itemDiv);
+
+            checkBox.addEventListener('click', (e) => {
+                if (checkBox.checked) {
+                    titleH4.style.textDecoration = 'line-through';
+                    setTimeout(() => {
+                        _itemsDiv.removeChild(itemDiv);
+                        popItem(item);
+                    }, 3000);
+                }
+            });
 
         }
     } else {
