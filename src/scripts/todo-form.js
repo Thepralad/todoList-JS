@@ -1,6 +1,8 @@
 import { pushItem } from "./todo-list";
 import { Items } from "./todo-items";
 import { displayProject } from "./todo-dom";
+import { pushProjectName } from "./todo-list";
+
 
 let CURRENT_PROJ_STATE = 'today';
 
@@ -14,6 +16,8 @@ function projectBtnSelection(){
     }
 }
 
+ 
+
 function inputForm(){
    document.getElementById('submit').addEventListener('click', e => {
     const title = document.getElementById('title').value;
@@ -25,8 +29,6 @@ function inputForm(){
     pushItem(newItem);
     e.preventDefault();
    })
-
-
 }
 export{
     inputForm, projectBtnSelection, CURRENT_PROJ_STATE
