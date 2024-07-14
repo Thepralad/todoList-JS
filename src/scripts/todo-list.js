@@ -1,12 +1,15 @@
 import { pushToLocalStorage } from "./todo-storage";
 import { Log } from "./utility";
 import { displayProject } from "./todo-dom";
+import { retrieveFromLocalStorage } from "./todo-storage";
 
 const ProjectTemplate = {
     today: []
 }
+
+
 function loadProjectFromLocalStorage(){
-    const storedProjects = JSON.parse(localStorage.getItem('Projects'))
+    const storedProjects = retrieveFromLocalStorage();
     if(storedProjects){
         return storedProjects;
     }
@@ -14,8 +17,6 @@ function loadProjectFromLocalStorage(){
         return ProjectTemplate;
     }
 }
-
-
 
 const pushItem = function(value){
     const Projects = loadProjectFromLocalStorage();
@@ -32,6 +33,7 @@ const pushItem = function(value){
 }
 
 const popItem = function(value){
+    const Projects = loadProjectFromLocalStorage();
     Projects[value.project].splice(Projects[value.project].indexOf(value), 1);
     pushToLocalStorage(Projects);
     Log(value.title + " removed!", "red");
@@ -41,5 +43,6 @@ export {
     pushItem,
     popItem,
     ProjectTemplate,
+    loadProjectFromLocalStorage
 }
      
