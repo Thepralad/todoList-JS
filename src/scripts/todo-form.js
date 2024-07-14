@@ -1,8 +1,7 @@
 import { pushItem } from "./todo-list";
 import { Items } from "./todo-items";
 import { displayProject } from "./todo-dom";
-import { pushProjectName } from "./todo-list";
-
+import { checkDublicates } from "./utility";
 
 let CURRENT_PROJ_STATE = 'today';
 
@@ -16,8 +15,6 @@ function projectBtnSelection(){
     }
 }
 
- 
-
 function inputForm(){
    document.getElementById('submit').addEventListener('click', e => {
     const title = document.getElementById('title').value;
@@ -25,11 +22,18 @@ function inputForm(){
     const priority = document.getElementById('priority').value;
     const project = CURRENT_PROJ_STATE;
 
-    const newItem = new Items(title, date, priority, project)
-    pushItem(newItem);
+    if(checkDublicates(title, project) === false){
+        prompt('This alread exists!');
+    }
+    else{
+        const newItem = new Items(title, date, priority, project)
+        pushItem(newItem);
+    }
+
     e.preventDefault();
-   })
+   });
 }
+
 export{
     inputForm, projectBtnSelection, CURRENT_PROJ_STATE
 }
