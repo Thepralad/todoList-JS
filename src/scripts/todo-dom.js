@@ -1,7 +1,7 @@
 import { retrieveFromLocalStorage } from "./todo-storage";
 import { CURRENT_PROJ_STATE } from "./todo-form.js";
 import { popItem } from "./todo-list.js";
-import { weekdayConv } from "./utility.js";
+import { taskCounter } from "./utility.js";
 
 function Data(){
     const data = retrieveFromLocalStorage();
@@ -48,14 +48,27 @@ function datefns(value, dateP){
     }
 }
 
+function taskCounterUpdate(){
+    const taskCounterP = document.getElementById('taskCounter')
+    let noOfTasks = taskCounter(CURRENT_PROJ_STATE);
+    if(noOfTasks === 0){
+        taskCounterP.textContent = `No tasks left 📝`;
+    }
+    else{
+        taskCounterP.textContent = `${noOfTasks} tasks left`;
+    }
+    
+}
+
 function displayProject(){
     const currentProj = Data();
     const _itemsDiv = document.getElementById('items');
-
+    
     _itemsDiv.textContent = '';
     if (isCurrentProjectValid()) {
         for (const item of currentProj) {
 
+            taskCounterUpdate();
             const _date = item.date;
             const checkBox = document.createElement('input');
             checkBox.setAttribute('type', 'checkbox');
@@ -102,5 +115,6 @@ function displayProject(){
 }
 
 export{
-    displayProject
+    displayProject,
+    taskCounterUpdate
 }

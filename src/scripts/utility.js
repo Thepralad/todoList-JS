@@ -25,8 +25,15 @@ const weekdayConv = function(value){
     return day;
 }
 
+function taskCounter(value){
+    let data = retrieveFromLocalStorage();
+    return data[value].length;
+
+}
+
 export{
     Log,
     checkDublicates,
     weekdayConv,
+    taskCounter
 }

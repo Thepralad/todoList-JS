@@ -2,6 +2,7 @@ import { pushToLocalStorage } from "./todo-storage";
 import { Log } from "./utility";
 import { displayProject } from "./todo-dom";
 import { retrieveFromLocalStorage } from "./todo-storage";
+import { taskCounterUpdate } from "./todo-dom";
 
 const ProjectTemplate = {
     today: [],
@@ -29,7 +30,7 @@ const pushItem = function(value){
     pushToLocalStorage(Projects);
     Log(value.title + " added!", "green");
     displayProject();
-
+    taskCounterUpdate();
 }
 
 const popItem = function(value){
@@ -37,6 +38,7 @@ const popItem = function(value){
     Projects[value.project].splice(Projects[value.project].indexOf(value), 1);
     pushToLocalStorage(Projects);
     Log(value.title + " removed!", "red");
+    taskCounterUpdate();
 }
 
 export {
