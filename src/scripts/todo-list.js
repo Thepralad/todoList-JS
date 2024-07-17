@@ -4,7 +4,7 @@ import { displayProject } from "./todo-dom";
 import { retrieveFromLocalStorage } from "./todo-storage";
 
 const ProjectTemplate = {
-    today: []
+    today: [],
 }
 
 

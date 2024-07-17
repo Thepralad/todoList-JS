@@ -1,1 +1,3 @@
-# todoList-JS
+# A simple todo list!
+
+
