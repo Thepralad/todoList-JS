@@ -14,6 +14,19 @@ function projectBtnSelection(){
         })
     }
 }
+function addTaskModal(){
+    const dialog = document.querySelector("dialog");
+    const showButton = document.getElementById("addTask");
+    const closeButton = document.getElementById("submit");
+
+    showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+      closeButton.addEventListener("click", (e) => {
+        dialog.close();
+        e.preventDefault();
+      });
+}
 
 function inputForm(){
    document.getElementById('submit').addEventListener('click', e => {
@@ -22,7 +35,7 @@ function inputForm(){
     const priority = document.getElementById('priority').value;
     const project = CURRENT_PROJ_STATE;
 
-    if(checkDublicates(title, project) === false){
+    if( checkDublicates(title, project) === false){
         prompt('This alread exists!');
     }
     else{
@@ -35,5 +48,5 @@ function inputForm(){
 }
 
 export{
-    inputForm, projectBtnSelection, CURRENT_PROJ_STATE
+    inputForm, projectBtnSelection, CURRENT_PROJ_STATE, addTaskModal
 }

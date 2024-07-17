@@ -1,7 +1,8 @@
 import { Log } from "./utility.js";
 
+
 class Items{
-    constructor(title, date, priority = 'medium', project){
+    constructor(title, date = 'today', priority = 'medium', project){
         this.title = title;
         this.date = date;
         this.priority = priority;

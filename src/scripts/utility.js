@@ -16,8 +16,17 @@ const checkDublicates = function(value, project){
     return true;
     }
 
+const weekdayConv = function(value){
+    let day = '';
+    const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    for (let i = 0; i < value; i++) {
+        day = weekdays[i]
+    }
+    return day;
+}
 
 export{
     Log,
-    checkDublicates
+    checkDublicates,
+    weekdayConv,
 }
