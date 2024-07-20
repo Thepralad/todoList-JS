@@ -1,6 +1,8 @@
 # A simple todo list! 📝
 As a part of TheOdinProject curriculum, I made this simple todo list app.
 
+![Show Image](./src/show.png)
+
 ## Features
 - Takes notes of simple task
 - Add priority colors
@@ -13,4 +15,4 @@ As a part of TheOdinProject curriculum, I made this simple todo list app.
 2. Project switching
 3. Pop-up alert
 
-![Show Image](./src/show.png)
+
