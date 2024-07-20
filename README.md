@@ -1,5 +1,5 @@
-# A simple todo list!
-As a part of TheOdinProject curriculum, I made this simple todo list app
+# A simple todo list! 📝
+As a part of TheOdinProject curriculum, I made this simple todo list app.
 
 ## Features
 - Takes notes of simple task
@@ -13,3 +13,4 @@ As a part of TheOdinProject curriculum, I made this simple todo list app
 2. Project switching
 3. Pop-up alert
 
+![Show Image](./src/show.png)

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script defer src="bundle.js"></script></head>
+<body>
+    <dialog>
+        <h3>Add a task</h3>
+        <form>
+            <input type="text" placeholder="Do something...." id="title">
+            <input type="date" id="date">
+            <select id="priority" >
+                <option value="high">🟥</option>
+                <option value="mid">🟨</option>
+                <option value="low">🟩</option>
+            </select>
+            <button type="submit" id="submit">Add</button>
+        </form>
+        </form>
+      </dialog>
+    <div id="projects">
+        <div id="topSection">
+            <div id="profile">
+                <img id="odinLogo" src="./imgs/theodinlogo.png" alt="">
+                <p>Todinlist</p>
+            </div>
+            <img src="./imgs/bell.png" alt="">
+
+        </div>
+        <div id="projectBtns">
+            <div class="projectBtn">
+                <img src="./imgs/calendar.png" class="calendarIco">
+                <button class="project">Today</button>
+            </div>
+            <div class="projectBtn">
+                <img src="./imgs/calendar.png" class="calendarIco">
+                <button class="project">Tommorow</button>
+            </div>
+            <div class="projectBtn">
+                <img src="./imgs/calendar.png" class="calendarIco">
+                <button class="project">Upcoming</button>
+            </div>
+        </div>
+    </div>
+   
+    <div id="content">
+        <h3 id="projectTitle">Today</h3>
+        <p id="taskCounter">No tasks left 📝</p>
+        <div id="items">
+            <div class="item">
+                <input type="checkbox">
+                <h4 class="taskTitle">Do the dishes</h4>
+                <p class="date">20/7/24</p>
+            </div>
+            
+            <div class="item">
+                <input type="checkbox">
+                <h4 class="taskTitle" >Wash car</h4>
+                <p class="date">20/7/24</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <h4 class="taskTitle" >Study for 10 minutes</h4>
+                <p class="date">20/7/24</p>
+            </div>
+        </div>
+        <div id="addTask">
+            <p>+       Add task</p>
+        </div>
+    </div>
+</body>
+</html>
